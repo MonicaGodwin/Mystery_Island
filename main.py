@@ -1,6 +1,6 @@
 
 def show_intro():
-    title = "=== MYSTERY ISLAND ==="
+    title = "========== MYSTERY ISLAND =========="
     instruction = "The lighthouse is dark, the bridge is locked,\nand a rescue boat will arrive only if you restore the beacon"
     name = input("Enter your name to start the game:\n")
     print(
@@ -18,19 +18,31 @@ def create_player(user_name):
     inventory = []
 
     user_info = {
-        "players_name": players_name,
-        "energy": energy,
-        "location": location,
-        "inventory": inventory
+        "Name": players_name,
+        "Energy": energy,
+        "Location": location,
+        "Inventory": inventory
     }
     return user_info
 information = create_player(user_name)
 
 def show_status(information):
     print(
-        f"\n========== PLAYER STATUS =========="
+        f"\n========== PLAYER STATUS ==========\n"
     )
     for key, value in information.items():
-        print(key, value)  
+        print(f"{key}: {value}")  
 
 show_status(information)
+
+def display_menu():
+    print(
+        f"\n========== MYSTERY ISLAND MENU ==========\n\n"
+        f"1. Explore current location\n"
+        f"2. Move to another location\n"
+        f"3. View inventory\n"
+        f"4. Check player status\n"
+        f"5. Quit game"
+    )
+    menu = input("Enter your choice: ")
+    return menu
