@@ -65,8 +65,8 @@ def explore_location(information):
         )
     elif location == "Cave":
         print(
-            f"You discover a dark cave."
-            f"Strange markings cover its walls."
+            f"You discover a dark cave.\n"
+            f"Strange markings cover its walls.\n"
             f"Perhaps there's a secret hidden inside."
         )
     elif location == "Old Bridge":
@@ -77,5 +77,16 @@ def explore_location(information):
     elif location == "Lighthouse":
         print(
             f"You finally reach the lighthouse."
-            f"he beacon is dark, and the rescue boat is nowhere to be seen."
+            f"The beacon is dark, and the rescue boat is nowhere to be seen."
         )
+    else:
+        print("Unknown location")
+
+def collect_item(information,item):
+    collected_item = information["Inventory"]
+    if item in collected_item:
+        print("Item already in inventory")
+    else:
+        collected_item.append(item)
+        print("Item added successfully")
+collect_item(information ,"rope")
