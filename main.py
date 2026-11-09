@@ -14,13 +14,15 @@ user_name = show_intro()
 def create_player(user_name):
     players_name = user_name
     energy = 5
-    location = "Beach"
+    locations = ["Beach", "Jungle","Cave","Old Bridge","Lighthouse"]
+    current_location = "Beach"
     inventory = []
 
     user_info = {
         "Name": players_name,
         "Energy": energy,
-        "Location": location,
+        "Locations": locations,
+        "Current_location": current_location,
         "Inventory": inventory
     }
     return user_info
@@ -46,3 +48,34 @@ def display_menu():
     )
     menu = input("Enter your choice: ")
     return menu
+
+def explore_location(information):
+    location = information["Current_location"]
+    if location == "Beach":
+        print(
+            f"The waves crash against the shore.\n "
+            f"You notice pieces of the shipwreck scattered across the sand.\n"
+            f"Something useful might be hidden nearby."
+        )
+    elif location == "Jungle":
+        print(
+            f"Thick trees surround you.\n"
+            f"You hear strange sounds coming from the bushes.\n"
+            f"There are two paths ahead."
+        )
+    elif location == "Cave":
+        print(
+            f"You discover a dark cave."
+            f"Strange markings cover its walls."
+            f"Perhaps there's a secret hidden inside."
+        )
+    elif location == "Old Bridge":
+        print(
+            f"You reach an old, damaged bridge."
+            f"It looks dangerous. You might need something to make crossing possible."
+        )
+    elif location == "Lighthouse":
+        print(
+            f"You finally reach the lighthouse."
+            f"he beacon is dark, and the rescue boat is nowhere to be seen."
+        )
