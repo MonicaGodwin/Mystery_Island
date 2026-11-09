@@ -11,7 +11,7 @@ def show_intro():
     return name
 user_name = show_intro()
 
-def create_player():
+def create_player(user_name):
     players_name = user_name
     energy = 5
     location = "Beach"
@@ -24,6 +24,13 @@ def create_player():
         "inventory": inventory
     }
     return user_info
+information = create_player(user_name)
 
-def show_status():
-    
+def show_status(information):
+    print(
+        f"\n========== PLAYER STATUS =========="
+    )
+    for key, value in information.items():
+        print(key, value)  
+
+show_status(information)
